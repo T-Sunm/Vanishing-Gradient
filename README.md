@@ -23,7 +23,9 @@ In this experiment, we replace SGD with Adam, a more advanced optimizer capable 
 Batch Normalization is a widely used technique to maintain stable input distributions across layers, preventing gradients from vanishing or exploding. This technique also helps accelerate convergence and improves the generalization capability of the model.
 
 In this experiment, we test two normalization methods:
-![Batchnorm Visualization](img/3.png)
+![Batchnorm Visualization](img/4.png)
+
+
 **(a) Standard Batch Normalization**
 Batch Normalization is applied to stabilize the output distribution of each layer, keeping values within a stable range and improving convergence speed. Here, we implement nn.BatchNorm1d and apply it after each Linear layer in our baseline model. This helps prevent saturation and maintain consistent gradient flow across layers. 
 
@@ -67,9 +69,9 @@ In this experiment, we implement a GradientNormalizationLayer, utilizing PyTorch
 | Method                         | Description  | Implementation  |
 |--------------------------------|-------------|----------------|
 | `1. Weight Increasing`        | Adjusts weight initialization to prevent shrinking gradients by increasing initial weight values. | [Weight Increasing with std = 1.0](https://www.kaggle.com/code/tsunmm/vanishing-gradient-weight-increasing-ver-1) <br> [Weight Increasing with std = 10.0](https://www.kaggle.com/code/tsunmm/vanishing-gradient-weight-increasing-ver-2) |
-| `2. Better Activation`        | Replaces traditional activation functions (e.g., Sigmoid) with advanced functions like ReLU to mitigate saturation issues and maintain stable gradients. | [Better Activation](https://your-kaggle-link.com) |
-| `3. Better Optimizer`         | Uses advanced optimizers like Adam instead of SGD to dynamically adjust the learning rate and stabilize gradient updates. | [Better Optimizer](https://your-kaggle-link.com) |
-| `4. Normalize Inside Network` | Applies Batch Normalization or a custom normalization layer to keep activations within a stable range, improving convergence speed. | [Normalize Inside Network](https://your-kaggle-link.com) |
-| `5. Skip Connection`          | Implements ResNet-style skip connections to allow gradients to bypass multiple layers, reducing the risk of vanishing gradients. | [Skip Connection](https://your-kaggle-link.com) |
-| `6. Train Layers Separately`  | Uses layer-wise training (fine-tuning) by gradually adding layers to stabilize training and enhance feature learning. | [Train Layers Separately](https://your-kaggle-link.com) |
-| `7. Gradient Normalization`   | Normalizes gradients during backpropagation to prevent vanishing/exploding gradients and improve learning in deeper layers. | [Gradient Normalization](https://your-kaggle-link.com) |
+| `2. Better Activation`        | Replaces traditional activation functions (e.g., Sigmoid) with advanced functions like ReLU to mitigate saturation issues and maintain stable gradients. | [Better Activation](https://www.kaggle.com/code/tsunmm/vanishing-gradient-better-activation) |
+| `3. Better Optimizer`         | Uses advanced optimizers like Adam instead of SGD to dynamically adjust the learning rate and stabilize gradient updates. | [Better Optimizer](https://www.kaggle.com/code/tsunmm/vanishing-gradient-gradient-normalization) |
+| `4. Normalize Inside Network` | Applies Batch Normalization or a custom normalization layer to keep activations within a stable range, improving convergence speed. | [Normalize Inside Network ver1](https://www.kaggle.com/code/tsunmm/vanishing-gradient-normalize-ver-1) <br> [Normalize Inside Network ver2](https://www.kaggle.com/code/tsunmm/vanishing-gradient-normalize-ver-2) |
+| `5. Skip Connection`          | Implements ResNet-style skip connections to allow gradients to bypass multiple layers, reducing the risk of vanishing gradients. | [Skip Connection](https://www.kaggle.com/code/tsunmm/vanishing-gradient-skip-connection) |
+| `6. Train Layers Separately`  | Uses layer-wise training (fine-tuning) by gradually adding layers to stabilize training and enhance feature learning. | [Train Layers Separately](https://www.kaggle.com/code/tsunmm/vanishing-gradient-train-layers-separately) |
+| `7. Gradient Normalization`   | Normalizes gradients during backpropagation to prevent vanishing/exploding gradients and improve learning in deeper layers. | [Gradient Normalization](https://www.kaggle.com/code/tsunmm/vanishing-gradient-gradient-normalization) |
