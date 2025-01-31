@@ -1,3 +1,11 @@
+# **Introduction**
+Vanishing Gradient is a notorious challenge encountered when training deep neural networks. This phenomenon occurs when the gradients, used to update the network's weights during backpropagation, become exceedingly small as they propagate back from the output layer to the input layer. Consequently, the weights in the earlier layers receive minimal or no updates, causing the model to learn very slowly or even completely stall, especially in the initial epochs.
+
+This problem is particularly prevalent when the model becomes deeper (more layers) in an attempt to learn complex features from large datasets. As the gradient diminishes through each layer, weight updates become ineffective, potentially leading to weights approaching zero and a weight distribution concentrated around zero. The root cause of this phenomenon lies in the chain rule used in backpropagation, where the gradient at layers closer to the input is diminished by the product of gradients of preceding layers, often resulting in values close to zero.
+
+This project delves into the Vanishing Gradient problem, elucidating its causes, consequences, and proposing effective solutions to mitigate it. It aims to provide a deeper understanding of one of the significant hurdles in the field of deep learning and how to overcome it.
+
+![Weight Initialization Visualization](img/overview.png)
 
 ## 1. Weight Increasing
 This technique focuses on initializing weights with larger values to increase gradient magnitude during backpropagation. This helps prevent gradients from vanishing across layers, especially when using saturating activation functions like Sigmoid.
